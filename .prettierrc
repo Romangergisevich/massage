@@ -3,5 +3,7 @@
   "semi": true,
   "singleQuote": true,
   "trailingComma": "all",
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "printWidth": 83,
+  "bracketSpacing": true
 }
