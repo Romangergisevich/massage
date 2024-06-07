@@ -1,0 +1,15 @@
+:root {
+  --theme-color: #313131;
+  --text-color: #ffffff;
+
+  color-scheme: light dark;
+  color: var(--text-color);
+  background-color: var(--theme-color);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  
+}
+
