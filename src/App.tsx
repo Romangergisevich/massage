@@ -1,10 +1,9 @@
-import ThemeSwitch from './components/ui/ThemeSwitch';
+import MainHeader from './components/header/MainHeader';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
-      ready to blow
-      <ThemeSwitch />
+      <MainHeader />
     </>
   );
 };
