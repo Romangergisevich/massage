@@ -5,7 +5,11 @@ const Socials: React.FC = () => {
   return (
     <div className={styles.socialContainer}>
       <div>
-        <button className={styles.Btn}>
+        <a
+          href="https://www.instagram.com/massage_time_brest?igshid=MzRlODBiNWFlZA%3D%3D"
+          target="_blank"
+          className={styles.Btn}
+        >
           <span className={styles.svgContainer}>
             <svg
               fill="white"
@@ -18,10 +22,10 @@ const Socials: React.FC = () => {
             </svg>
           </span>
           <span className={styles.BG__insta}></span>
-        </button>
+        </a>
       </div>
       <div>
-        <button className={styles.Btn}>
+        <a href="https://t.me/kaddatolya" target="_blank" className={styles.Btn}>
           <span className={styles.svgContainer}>
             <svg
               viewBox="0 0 496 512"
@@ -36,7 +40,7 @@ const Socials: React.FC = () => {
             </svg>
           </span>
           <span className={styles.BG__tg}></span>
-        </button>
+        </a>
       </div>
       <div>
         <button className={styles.Btn}>

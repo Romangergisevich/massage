@@ -11,7 +11,6 @@ const MainHeader: React.FC = () => {
         <div>
           <HeadLink to="/">Главная</HeadLink>
           <HeadLink to="/">Запись</HeadLink>
-          <HeadLink to="/">вопросы</HeadLink>
           <HeadLink to="/">Противопоказания</HeadLink>
           <HeadLink to="/">Часто задаваемые вопросы</HeadLink>
         </div>
