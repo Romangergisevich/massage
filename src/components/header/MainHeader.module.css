@@ -13,6 +13,17 @@
   box-shadow: 0px 12px 49px -5px rgba(129, 129, 129, 0.2);
 }
 
+.mainHeader__navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mainHeader__navBar div span {
+  margin: 0 15px 0 15px;
+}
+
 .mainHeader__themeSwitch {
   position: absolute;
   right: 15px;
