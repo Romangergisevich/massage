@@ -1,10 +1,10 @@
-import ThemeSwitch from '../ui/ThemeSwitch';
+import ThemeSwitch from '../ui/switchers/ThemeSwitch';
 import styles from './MainHeader.module.css';
 
 const MainHeader: React.FC = () => {
   return (
-    <div className={styles.mainHeader}>
-      <div className={styles.mainHeader_themeSwitch}>
+    <div className={`header ${styles.mainHeader}`}>
+      <div className={styles.mainHeader__themeSwitch}>
         <ThemeSwitch />
       </div>
     </div>

@@ -4,6 +4,7 @@
   "singleQuote": true,
   "trailingComma": "all",
   "arrowParens": "always",
-  "printWidth": 83,
+  "printWidth": 90,
+  "jsxBracketSameLine": true,
   "bracketSpacing": true
 }
