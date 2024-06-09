@@ -8,7 +8,7 @@ const MainHeader: React.FC = () => {
     <div className={`header ${styles.mainHeader}`}>
       <Socials />
       <div className={styles.mainHeader__navBar}>
-        <div>
+        <div className={styles.mainHeader__navBar__linksContainer}>
           <HeadLink to="/">Главная</HeadLink>
           <HeadLink to="/">Запись</HeadLink>
           <HeadLink to="/">Противопоказания</HeadLink>
