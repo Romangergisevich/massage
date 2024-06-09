@@ -12,6 +12,7 @@ const MainHeader: React.FC = () => {
           <HeadLink to="/">Главная</HeadLink>
           <HeadLink to="/">Запись</HeadLink>
           <HeadLink to="/">Противопоказания</HeadLink>
+          <HeadLink to="/">Требования к клиенту</HeadLink>
           <HeadLink to="/">Часто задаваемые вопросы</HeadLink>
         </div>
       </div>
