@@ -14,7 +14,7 @@ const ThemeSwitch: React.FC = () => {
     root.style.setProperty('--text-color', currentTextColor);
     if (themeSwitcher.current && isChecked !== null)
       themeSwitcher.current.checked = JSON.parse(isChecked);
-  }, [currentThemeColor]);
+  }, []);
 
   const themeToggle = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
