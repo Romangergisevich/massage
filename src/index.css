@@ -18,6 +18,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.burger_line {
+  transition: 0.5s;
+  stroke-width: 6px;
+  stroke: var(--text-color);
+}
+
+.hamburger .checkbox:checked + svg .burger_line {
+  stroke: crimson;
+}
+
 .header {
   background-color: var(--theme-color);
   transition:

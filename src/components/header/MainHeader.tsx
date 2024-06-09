@@ -1,3 +1,4 @@
+import React from 'react';
 import HeadLink from '../ui/buttons/HeadLink';
 import Socials from '../ui/social/Socials';
 import ThemeSwitch from '../ui/switchers/ThemeSwitch';
