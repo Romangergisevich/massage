@@ -3,6 +3,7 @@ import HeadLink from '../ui/buttons/HeadLink';
 import Socials from '../ui/social/Socials';
 import ThemeSwitch from '../ui/switchers/ThemeSwitch';
 import styles from './MainHeader.module.css';
+import Burger from '../ui/burger/Burger';
 
 const MainHeader: React.FC = () => {
   return (
@@ -15,6 +16,9 @@ const MainHeader: React.FC = () => {
           <HeadLink to="/">Противопоказания</HeadLink>
           <HeadLink to="/">Требования к клиенту</HeadLink>
           <HeadLink to="/">Часто задаваемые вопросы</HeadLink>
+        </div>
+        <div className={styles.mainHeader__mobileNavBar__container}>
+          <Burger />
         </div>
       </div>
       <div className={styles.mainHeader__themeSwitch}>

@@ -24,6 +24,10 @@
   margin: 0 15px 0 15px;
 }
 
+.mainHeader__mobileNavBar__container {
+  display: none
+}
+
 .mainHeader__navBar__linksContainer {
   display: flex;
   margin: 0 10% 0 15%;
@@ -34,6 +38,19 @@
     width: 950px;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .mainHeader__navBar__linksContainer {
+    display: none;
+  }
+
+  .mainHeader__mobileNavBar__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 
