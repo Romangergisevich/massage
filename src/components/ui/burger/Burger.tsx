@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef } from 'react';
+import React, { ChangeEvent, useEffect, useRef } from 'react';
 import styles from './Burger.module.css';
 
 interface BurgerProps {
@@ -6,9 +6,24 @@ interface BurgerProps {
 }
 
 const Burger: React.FC<BurgerProps> = (props) => {
+  const burgerRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 850 && burgerRef.current) burgerRef.current.checked = false;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className={`${styles.hamburger} hamburger`}>
       <input
+        ref={burgerRef}
         onChange={props.menuToggleFunc}
         className={`${styles.checkbox} checkbox`}
         type="checkbox"

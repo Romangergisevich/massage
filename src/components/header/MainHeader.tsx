@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef } from 'react';
+import React, { ChangeEvent, useEffect, useRef } from 'react';
 import HeadLink from '../ui/buttons/HeadLink';
 import Socials from '../ui/social/Socials';
 import ThemeSwitch from '../ui/switchers/ThemeSwitch';
@@ -15,7 +15,22 @@ const MainHeader: React.FC = () => {
       : mobileBar.current?.classList.remove(active);
   };
 
-  console.log(mobileBar.current);
+  useEffect(() => {
+    const mobileNavBarToggle = () => {
+      window.innerWidth > 850 ? mobileBar.current?.classList.remove(active) : null;
+    };
+
+    window.addEventListener('resize', () => {
+      mobileNavBarToggle();
+
+      return () => {
+        window.removeEventListener('resize', () => {
+          mobileNavBarToggle();
+        });
+      };
+    });
+  }, []);
+
   return (
     <div className={`header ${styles.mainHeader}`}>
       <Socials />
@@ -30,7 +45,9 @@ const MainHeader: React.FC = () => {
         <div className={styles.mainHeader__mobileNavBar__container}>
           <Burger menuToggleFunc={mobileMenuToggle} />
         </div>
-        <div ref={mobileBar} className={styles.mainHeader__mobileNavBar__linksContainer}>
+        <div
+          ref={mobileBar}
+          className={`mobileNavBar ${styles.mainHeader__mobileNavBar__linksContainer}`}>
           <HeadLink to="/">Главная</HeadLink>
           <HeadLink to="/">Запись</HeadLink>
           <HeadLink to="/">Противопоказания</HeadLink>

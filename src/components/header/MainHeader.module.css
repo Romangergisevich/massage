@@ -43,7 +43,6 @@
   top: 60px;
   width: 100%;
   transition: all 0.5s;
-  /* border: 1px solid teal; */
   overflow: hidden;
   height: 0px;
 }
@@ -51,10 +50,15 @@
 .mobileNavBar__active {
   height: 100px;
   transition: 0.5s;
-  /* border: 1px solid teal; */
   -webkit-box-shadow: 0px 12px 49px -5px rgba(129, 129, 129, 0.2);
   -moz-box-shadow: 0px 12px 49px -5px rgba(129, 129, 129, 0.2);
   box-shadow: 0px 12px 49px -5px rgba(129, 129, 129, 0.2);
+}
+
+@media screen and (max-width: 450px) {
+  .mobileNavBar__active {
+    height: 150px;
+  }
 }
 
 @media screen and (max-width: 1350px) {

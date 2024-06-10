@@ -30,9 +30,12 @@
 
 .header {
   background-color: var(--theme-color);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  transition: all 0.5s;
+}
+
+.mobileNavBar {
+  background-color: var(--theme-color);
+  transition: all 0.5s;
 }
 
 .menu__link {
