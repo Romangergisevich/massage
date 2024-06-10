@@ -37,10 +37,10 @@ const MainHeader: React.FC = () => {
       <div className={styles.mainHeader__navBar}>
         <div className={styles.mainHeader__navBar__linksContainer}>
           <HeadLink to="/">Главная</HeadLink>
-          <HeadLink to="/">Запись</HeadLink>
-          <HeadLink to="/">Противопоказания</HeadLink>
-          <HeadLink to="/">Требования к клиенту</HeadLink>
-          <HeadLink to="/">Часто задаваемые вопросы</HeadLink>
+          <HeadLink to="/Booking">Запись</HeadLink>
+          <HeadLink to="/contraindications">Противопоказания</HeadLink>
+          <HeadLink to="/Requirements">Требования к клиенту</HeadLink>
+          <HeadLink to="/Questions">Часто задаваемые вопросы</HeadLink>
         </div>
         <div className={styles.mainHeader__mobileNavBar__container}>
           <Burger menuToggleFunc={mobileMenuToggle} />
