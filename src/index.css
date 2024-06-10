@@ -34,6 +34,7 @@
 }
 
 .mobileNavBar {
+  z-index: 2;
   background-color: var(--theme-color);
   transition: all 0.5s;
 }
@@ -82,4 +83,6 @@
 
 .main__body {
   padding: 0 50px 0 50px;
+  width: auto;
+  height: calc(100vh - 116px);
 }

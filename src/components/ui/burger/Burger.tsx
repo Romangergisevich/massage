@@ -45,19 +45,22 @@ const Burger: React.FC<BurgerProps> = (props) => {
           strokeLinecap="round"
           strokeWidth="4"
           stroke="black"
-          d="M6 11L44 11"></path>
+          d="M6 11L44 11"
+        ></path>
         <path
           strokeLinecap="round"
           strokeWidth="4"
           stroke="black"
           d="M6 24H43"
-          className={`${styles.lineMid} burger_line`}></path>
+          className={`${styles.lineMid} burger_line`}
+        ></path>
         <path
           strokeLinecap="round"
           strokeWidth="4"
           stroke="black"
           d="M6 37H43"
-          className={`${styles.lineBottom} burger_line`}></path>
+          className={`${styles.lineBottom} burger_line`}
+        ></path>
       </svg>
     </div>
   );
