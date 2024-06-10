@@ -1,5 +1,7 @@
 import React, { ChangeEvent, useEffect, useRef } from 'react';
 import styles from './Burger.module.css';
+import { useAppSelector } from '../../../custom_hooks/hooks';
+import { RootState } from '../../../store/store';
 
 interface BurgerProps {
   menuToggleFunc: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -7,6 +9,7 @@ interface BurgerProps {
 
 const Burger: React.FC<BurgerProps> = (props) => {
   const burgerRef = useRef<HTMLInputElement>(null);
+  const burgerIsOpen = useAppSelector((state: RootState) => state.MobileNav.value);
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,6 +22,14 @@ const Burger: React.FC<BurgerProps> = (props) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (burgerIsOpen && burgerRef.current) {
+      burgerRef.current.checked = true;
+    } else if (!burgerIsOpen && burgerRef.current) {
+      burgerRef.current.checked = false;
+    }
+  }, [burgerIsOpen]);
 
   return (
     <div className={`${styles.hamburger} hamburger`}>

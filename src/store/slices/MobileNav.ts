@@ -14,11 +14,9 @@ export const MobileNavSlice = createSlice({
   reducers: {
     closeNav: (state) => {
       state.value = false;
-      console.log(state.value);
     },
     openNav: (state) => {
       state.value = true;
-      console.log(state.value);
     },
   },
 });

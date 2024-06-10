@@ -4,8 +4,8 @@ import { useAppSelector, useAppDispatch } from '../../custom_hooks/hooks';
 import { closeNav, openNav } from '../../store/slices/MobileNav';
 
 const Home: React.FC = () => {
-  const dispatch = useAppDispatch();
   const testValue = useAppSelector((state: RootState) => state.MobileNav.value);
+  const dispatch = useAppDispatch();
 
   return (
     <div>
@@ -14,6 +14,7 @@ const Home: React.FC = () => {
       <button onClick={() => dispatch(openNav())}>test open</button>
       <button onClick={() => dispatch(closeNav())}>test close</button>
       <button onClick={() => console.log(testValue)}>test log</button>
+      <p>{`now is: ${testValue}`}</p>
     </div>
   );
 };

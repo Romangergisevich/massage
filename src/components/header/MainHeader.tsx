@@ -4,31 +4,44 @@ import Socials from '../ui/social/Socials';
 import ThemeSwitch from '../ui/switchers/ThemeSwitch';
 import styles from './MainHeader.module.css';
 import Burger from '../ui/burger/Burger';
+import { useAppDispatch, useAppSelector } from '../../custom_hooks/hooks';
+import { RootState } from '../../store/store';
+import { closeNav, openNav } from '../../store/slices/MobileNav';
 
 const MainHeader: React.FC = () => {
   const mobileBar = useRef<HTMLDivElement>(null);
   const active = styles.mobileNavBar__active;
+  const burgerIsOpen = useAppSelector((state: RootState) => state.MobileNav.value);
+  const dispatch = useAppDispatch();
 
   const mobileMenuToggle = (e: ChangeEvent<HTMLInputElement>) => {
-    e.target.checked
-      ? mobileBar.current?.classList.add(active)
-      : mobileBar.current?.classList.remove(active);
+    e.target.checked ? dispatch(openNav()) : dispatch(closeNav());
+    burgerIsOpen
+      ? mobileBar.current?.classList.remove(active)
+      : mobileBar.current?.classList.add(active);
   };
 
   useEffect(() => {
+    burgerIsOpen
+      ? mobileBar.current?.classList.add(active)
+      : mobileBar.current?.classList.remove(active);
+  }, [burgerIsOpen]);
+
+  useEffect(() => {
     const mobileNavBarToggle = () => {
+      window.innerWidth > 850 ? dispatch(closeNav()) : null;
       window.innerWidth > 850 ? mobileBar.current?.classList.remove(active) : null;
     };
 
     window.addEventListener('resize', () => {
       mobileNavBarToggle();
-
-      return () => {
-        window.removeEventListener('resize', () => {
-          mobileNavBarToggle();
-        });
-      };
     });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        mobileNavBarToggle();
+      });
+    };
   }, []);
 
   return (
@@ -49,10 +62,10 @@ const MainHeader: React.FC = () => {
           ref={mobileBar}
           className={`mobileNavBar ${styles.mainHeader__mobileNavBar__linksContainer}`}>
           <HeadLink to="/">Главная</HeadLink>
-          <HeadLink to="/">Запись</HeadLink>
-          <HeadLink to="/">Противопоказания</HeadLink>
-          <HeadLink to="/">Требования к клиенту</HeadLink>
-          <HeadLink to="/">Часто задаваемые вопросы</HeadLink>
+          <HeadLink to="/Booking">Запись</HeadLink>
+          <HeadLink to="/contraindications">Противопоказания</HeadLink>
+          <HeadLink to="/Requirements">Требования к клиенту</HeadLink>
+          <HeadLink to="/Questions">Часто задаваемые вопросы</HeadLink>
         </div>
       </div>
       <div className={styles.mainHeader__themeSwitch}>
