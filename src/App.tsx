@@ -7,7 +7,7 @@ import Questions from './components/pages/Questions';
 import Booking from './components/pages/Booking';
 import { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from './custom_hooks/hooks';
-import MobileNav, { closeNav } from './store/slices/MobileNav';
+import { closeNav } from './store/slices/MobileNav';
 import { RootState } from './store/store';
 
 const App: React.FC = () => {
