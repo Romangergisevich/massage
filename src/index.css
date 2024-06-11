@@ -1,6 +1,6 @@
 :root {
   --theme-color: #313131;
-  --text-color: #ffffff;
+  --text-color: #f5f5f5;
 
   color-scheme: light dark;
   color: var(--text-color);

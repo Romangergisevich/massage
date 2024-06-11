@@ -19,18 +19,18 @@ const ThemeSwitch: React.FC = () => {
   const themeToggle = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
       localStorage.setItem('massage_themeSwitcherIsChecked', 'true');
-      localStorage.setItem('massage_themeColor', '#ffffff');
+      localStorage.setItem('massage_themeColor', '#f5f5f5');
       localStorage.setItem('massage_textColor', '#313131');
 
-      root.style.setProperty('--theme-color', '#ffffff');
+      root.style.setProperty('--theme-color', '#f5f5f5');
       root.style.setProperty('--text-color', '#313131');
     } else {
       localStorage.setItem('massage_themeSwitcherIsChecked', 'false');
       localStorage.setItem('massage_themeColor', '#313131');
-      localStorage.setItem('massage_textColor', '#ffffff');
+      localStorage.setItem('massage_textColor', '#f5f5f5');
 
       root.style.setProperty('--theme-color', '#313131');
-      root.style.setProperty('--text-color', '#ffffff');
+      root.style.setProperty('--text-color', '#f5f5f5');
     }
   };
 
