@@ -26,6 +26,7 @@ body {
 
 .bodyBlur {
   display: none;
+  z-index: 3;
 }
 
 .bodyBlur_active {
@@ -51,12 +52,13 @@ body {
 }
 
 .header {
+  z-index: 4;
   background-color: var(--theme-color);
   transition: all 0.5s;
 }
 
 .mobileNavBar {
-  z-index: 2;
+  z-index: 4;
   background-color: var(--theme-color);
   transition: all 0.5s;
 }
