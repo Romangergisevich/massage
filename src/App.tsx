@@ -1,14 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import MainHeader from './components/header/MainHeader';
-import Home from './components/pages/Home';
-import Contraindications from './components/pages/Contraindications';
-import Requirements from './components/pages/Requirements';
-import Questions from './components/pages/Questions';
-import Booking from './components/pages/Booking';
-import { useEffect, useRef } from 'react';
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from './custom_hooks/hooks';
 import { closeNav } from './store/slices/MobileNav';
 import { RootState } from './store/store';
+
+const Home = lazy(() => import('./components/pages/Home'));
+const Booking = lazy(() => import('./components/pages/Booking'));
+const Contraindications = lazy(() => import('./components/pages/Contraindications'));
+const Requirements = lazy(() => import('./components/pages/Requirements'));
+const Questions = lazy(() => import('./components/pages/Questions'));
 
 const App: React.FC = () => {
   const bodyBlur_ref = useRef<HTMLDivElement>(null);
@@ -38,11 +39,46 @@ const App: React.FC = () => {
       <div ref={bodyBlur_ref} className="bodyBlur"></div>
       <div className="main__body-container">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Booking" element={<Booking />} />
-          <Route path="/Contraindications" element={<Contraindications />} />
-          <Route path="/Requirements" element={<Requirements />} />
-          <Route path="/Questions" element={<Questions />} />
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<p>loading...</p>}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Booking"
+            element={
+              <Suspense fallback={<p>Loading...</p>}>
+                <Booking />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Contraindications"
+            element={
+              <Suspense fallback={<p>Loading...</p>}>
+                <Contraindications />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Requirements"
+            element={
+              <Suspense fallback={<p>Loading...</p>}>
+                <Requirements />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Questions"
+            element={
+              <Suspense fallback={<p>Loading...</p>}>
+                <Questions />
+              </Suspense>
+            }
+          />
         </Routes>
       </div>
     </>
