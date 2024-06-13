@@ -1,17 +1,8 @@
 import React from 'react';
 import styles from './Home.module.css';
 import BlockLink from '../ui/buttons/BlockLink';
-import { useState } from 'react';
-
-interface HomeStates {
-  isLoading: boolean;
-}
 
 const Home: React.FC = () => {
-  const [state, setState] = useState<HomeStates>({
-    isLoading: true,
-  });
-
   return (
     <div className={styles.home__container}>
       <div className={styles.main__img__contaner}>

@@ -4,6 +4,7 @@ import { Suspense, lazy, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from './custom_hooks/hooks';
 import { closeNav } from './store/slices/MobileNav';
 import { RootState } from './store/store';
+import Loader from './components/ui/loader/Loader';
 
 const Home = lazy(() => import('./components/pages/Home'));
 const Booking = lazy(() => import('./components/pages/Booking'));
@@ -42,7 +43,7 @@ const App: React.FC = () => {
           <Route
             path="/"
             element={
-              <Suspense fallback={<p>loading...</p>}>
+              <Suspense fallback={<Loader />}>
                 <Home />
               </Suspense>
             }
@@ -50,7 +51,7 @@ const App: React.FC = () => {
           <Route
             path="/Booking"
             element={
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense fallback={<Loader />}>
                 <Booking />
               </Suspense>
             }
@@ -58,7 +59,7 @@ const App: React.FC = () => {
           <Route
             path="/Contraindications"
             element={
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense fallback={<Loader />}>
                 <Contraindications />
               </Suspense>
             }
@@ -66,7 +67,7 @@ const App: React.FC = () => {
           <Route
             path="/Requirements"
             element={
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense fallback={<Loader />}>
                 <Requirements />
               </Suspense>
             }
@@ -74,7 +75,7 @@ const App: React.FC = () => {
           <Route
             path="/Questions"
             element={
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense fallback={<Loader />}>
                 <Questions />
               </Suspense>
             }
