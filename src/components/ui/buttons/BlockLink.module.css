@@ -61,7 +61,7 @@
 .BlockLink::before {
   content: '';
   position: absolute;
-  left: 50%;
+  left: calc(50% + 10px);
   transform: translatex(-50%);
   bottom: -5px;
   width: 30px;
@@ -82,7 +82,7 @@
 .BlockLink::after {
   content: '';
   position: absolute;
-  left: 50%;
+  left: calc(50% + 10px);
   transform: translatex(-50%);
   top: -5px;
   width: 30px;

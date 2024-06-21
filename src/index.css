@@ -20,18 +20,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   margin: 0px;
 }
 
 .bodyBlur {
   display: none;
-  z-index: 3;
 }
 
 .bodyBlur_active {
   display: block;
   position: fixed;
+  z-index: 3;
   transition: all 0.5s;
   background-color: var(--text-color);
   opacity: 0.5;
@@ -107,7 +112,6 @@ body {
 
 .main__body-container {
   padding: 25px 50px 25px 50px;
-  height: calc(100vh - 105px);
 }
 
 /* loader */

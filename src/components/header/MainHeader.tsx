@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useRef } from 'react';
-import HeadLink from '../ui/buttons/HeadLink';
+import RouteLink from '../ui/buttons/RouteLink';
 import Socials from '../ui/social/Socials';
 import ThemeSwitch from '../ui/switchers/ThemeSwitch';
 import styles from './MainHeader.module.css';
@@ -7,6 +7,7 @@ import Burger from '../ui/burger/Burger';
 import { useAppDispatch, useAppSelector } from '../../custom_hooks/hooks';
 import { RootState } from '../../store/store';
 import { closeNav, openNav } from '../../store/slices/MobileNav';
+import DefaultLink from '../ui/buttons/DefaultLink';
 
 const MainHeader: React.FC = () => {
   const mobileBar = useRef<HTMLDivElement>(null);
@@ -49,11 +50,11 @@ const MainHeader: React.FC = () => {
       <Socials />
       <div className={styles.mainHeader__navBar}>
         <div className={styles.mainHeader__navBar__linksContainer}>
-          <HeadLink to="/">Главная</HeadLink>
-          <HeadLink to="/Booking">Запись</HeadLink>
-          <HeadLink to="/contraindications">Противопоказания</HeadLink>
-          <HeadLink to="/Requirements">Требования к клиенту</HeadLink>
-          <HeadLink to="/Questions">Часто задаваемые вопросы</HeadLink>
+          <DefaultLink to="qwStart">Главная</DefaultLink>
+          <DefaultLink to="qwEnd">Запись</DefaultLink>
+          <DefaultLink to="qwEnd">Противопоказания</DefaultLink>
+          <DefaultLink to="qwEnd">Требования к клиенту</DefaultLink>
+          <DefaultLink to="qwEnd">Часто задаваемые вопросы</DefaultLink>
         </div>
         <div className={styles.mainHeader__mobileNavBar__container}>
           <Burger menuToggleFunc={mobileMenuToggle} />
@@ -61,11 +62,11 @@ const MainHeader: React.FC = () => {
         <div
           ref={mobileBar}
           className={`mobileNavBar ${styles.mainHeader__mobileNavBar__linksContainer}`}>
-          <HeadLink to="/">Главная</HeadLink>
-          <HeadLink to="/Booking">Запись</HeadLink>
-          <HeadLink to="/contraindications">Противопоказания</HeadLink>
-          <HeadLink to="/Requirements">Требования к клиенту</HeadLink>
-          <HeadLink to="/Questions">Часто задаваемые вопросы</HeadLink>
+          <DefaultLink to="qwStart">Главная</DefaultLink>
+          <DefaultLink to="qwEnd">Запись</DefaultLink>
+          <DefaultLink to="qwEnd">Противопоказания</DefaultLink>
+          <DefaultLink to="qwEnd">Требования к клиенту</DefaultLink>
+          <DefaultLink to="qwEnd">Часто задаваемые вопросы</DefaultLink>
         </div>
       </div>
       <div className={styles.mainHeader__themeSwitch}>

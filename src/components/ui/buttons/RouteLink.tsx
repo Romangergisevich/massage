@@ -7,7 +7,7 @@ interface LinkProps {
   to: string;
 }
 
-const HeadLink: React.FC<LinkProps> = (props) => {
+const RouteLink: React.FC<LinkProps> = (props) => {
   const dispatch = useAppDispatch();
 
   return (
@@ -21,4 +21,4 @@ const HeadLink: React.FC<LinkProps> = (props) => {
   );
 };
 
-export default HeadLink;
+export default RouteLink;
